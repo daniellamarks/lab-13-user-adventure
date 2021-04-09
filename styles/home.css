@@ -1,5 +1,4 @@
 
-
 .home-image {
     background-image: url('../assets/icecave.jpg');
     background-size: cover;
@@ -32,13 +31,12 @@ legend {
     color: white;
 }
 
-/* form {
+form {
     position: relative;
-    float: left;
-} */
+}
 
 section {
-    margin: 50px;
+    margin: 70px;
 }
 
 button {
@@ -47,4 +45,10 @@ button {
     /* border-radius: 5px; */
     padding:3px;
     cursor: pointer;
+}
+
+fieldset {
+    max-width: 30%;
+    min-width: 20%;
+    /* display: inline-block; */
 }

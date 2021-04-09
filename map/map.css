@@ -1,19 +1,55 @@
+* {
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
 #mapWithQuests {
-    background-image: url('../assets/map.jpg');
     position: relative;
     background-size: contain;
     background-repeat: no-repeat;
     width: 90vw;
     height: calc(90vw * 642 / 900);
-    margin: auto;
+    margin: 0;
 }
 
 .quest {
     position: absolute;
     color: white;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 5px 5px 5px black;
 }
 
 .quest.completed:after {
     content: ' ✔';
 }
+
+a {
+    font-family: 'Amatic SC', cursive;
+    text-decoration: none;
+    color: white;
+
+}
+
+section {
+    display: flex;
+    margin: 0;    
+    width: 100%
+}
+
+div {
+    /* border: solid black 1px; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+}
+
