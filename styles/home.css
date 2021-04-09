@@ -1,1 +1,50 @@
-/* add home page styles here */
+
+
+.home-image {
+    background-image: url('../assets/icecave.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+.avatar-img {
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+    height: 50px;
+    width: 50px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+input:checked + img {
+  filter: drop-shadow(5px 5px 5px hsl(180, 11%, 89%));
+}
+
+#avatars input {
+      display: none;
+  }
+
+legend {
+    color: white;
+}
+
+.name {
+    color: white;
+}
+
+/* form {
+    position: relative;
+    float: left;
+} */
+
+section {
+    margin: 50px;
+}
+
+button {
+    background-color: white;
+    border: none;
+    /* border-radius: 5px; */
+    padding:3px;
+    cursor: pointer;
+}
