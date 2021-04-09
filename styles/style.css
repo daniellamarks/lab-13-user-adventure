@@ -111,3 +111,7 @@ footer {
     }
 
   }
+
+  .map-image-section {
+      background-image: url('../assets/map.jpg');
+  }
