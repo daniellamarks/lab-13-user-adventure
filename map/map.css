@@ -1,0 +1,19 @@
+#mapWithQuests {
+    background-image: url('../assets/map.jpg');
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 90vw;
+    height: calc(90vw * 642 / 900);
+    margin: auto;
+}
+
+.quest {
+    position: absolute;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+.quest.completed:after {
+    content: ' ✔';
+}

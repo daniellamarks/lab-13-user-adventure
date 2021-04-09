@@ -28,4 +28,4 @@ export function updateUserData(questId, choice){
 
     setUserData(user);
 }
-//put into storage as string
+//put into storage as stringified object
