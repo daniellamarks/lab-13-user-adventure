@@ -1,7 +1,7 @@
 export const aliveGritMessages = {
     cowardly: 'you are alive but have lost all courage.',
     comfortable: 'you are alive but would rather be comfortable than doing difficult tasks.',
-    brave: 'you and ready for your next adventure.',
+    brave: 'you are ready for your next adventure.',
 };
 
 export const deadGritMessages = {
