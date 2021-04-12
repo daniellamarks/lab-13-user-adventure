@@ -1,4 +1,4 @@
-import quests from '../data.js';
+import quests from './data.js';
 const USER = 'USER';
 
 //returns an object

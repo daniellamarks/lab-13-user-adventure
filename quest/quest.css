@@ -15,10 +15,11 @@ body {
     background: no-repeat center center fixed;
 }
 
-input {
-    opacity: 0;
+.choice-input {
+    /* opacity: 0;
     position: fixed;
-    width: 0;
+    width: 0; */
+    display: none;
 }
 
 label {
@@ -32,7 +33,7 @@ label:hover {
     text-decoration-style: wavy;
 }
 
-input[type=radio]:checked + label {
+.choice-input:checked + label {
     text-decoration-line: underline;
     text-decoration-style: wavy;
 }

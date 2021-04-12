@@ -22,14 +22,12 @@ const form = document.createElement('form');
 
 for (let choice of matchingQuestObject.choices) {
     const label = document.createElement('label');
-
+    
     const radio = document.createElement('input');
+    radio.classList.add('choice-input')
     radio.type = 'radio';
     radio.name = 'possibleSelection';
     radio.value = choice.id;
-    // const img = document.createElement('img');
-    // img.src = '../assets/kayak1.jpg';
-    // img.width = '100%';
     label.append(choice.description, radio);
     
     form.append(label);
