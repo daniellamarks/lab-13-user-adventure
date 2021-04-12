@@ -1,6 +1,6 @@
 import { getUserData } from '../local-storage-utils.js';
 import { renderHeader } from '../render-utils.js';
-import { aliveGritMessages, deadGritMessages, hpMessages } from './Messages.js';
+import { aliveGritMessages, deadGritMessages, hpMessages } from './messages.js';
 
 renderHeader();
 

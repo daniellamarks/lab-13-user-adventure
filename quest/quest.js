@@ -6,7 +6,7 @@ import { renderHeader } from '../render-utils.js';
 renderHeader();
 
 const section = document.querySelector('section');
-const body = document.querySelector('body')
+const body = document.querySelector('body');
 const parameters = new URLSearchParams(window.location.search);
 
 const questId = parameters.get('id');
@@ -24,11 +24,14 @@ for (let choice of matchingQuestObject.choices) {
     const label = document.createElement('label');
     
     const radio = document.createElement('input');
-    radio.classList.add('choice-input')
+    // radio.id('choice-input');
+    radio.classList.add('choice-input');
     radio.type = 'radio';
     radio.name = 'possibleSelection';
     radio.value = choice.id;
-    label.append(choice.description, radio);
+    const pDescription = document.createElement('p');
+    pDescription.textContent = choice.description;
+    label.append(radio, pDescription);
     
     form.append(label);
 }
@@ -48,20 +51,20 @@ form.addEventListener('submit', (event) => {
     updateUserData(matchingQuestObject.id, matchingChoice);
 
         // update UI
-    const sectionResult = document.createElement('section')
-    sectionResult.id = 'result'
-    sectionResult.classList.add('hidden')
-    const pResult = document.createElement('p')
-    pResult.id = 'result-description'
-    const aMap = document.createElement('a')
-    aMap.href = "../map"
-    aMap.textContent = 'Back to Quests'
+    const sectionResult = document.createElement('section');
+    sectionResult.id = 'result';
+    sectionResult.classList.add('hidden');
+    const pResult = document.createElement('p');
+    pResult.id = 'result-description';
+    const aMap = document.createElement('a');
+    aMap.href = '../map';
+    aMap.textContent = 'Back to Quests';
 
     form.classList.add('hidden');
     sectionResult.classList.remove('hidden');
     pResult.textContent = matchingChoice.result;
     
-    section.append(pResult, aMap)
+    section.append(pResult, aMap);
          
 });
 
