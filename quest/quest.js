@@ -13,6 +13,10 @@ const questId = parameters.get('id');
 
 const matchingQuestObject = findById(quests, questId);
 
+if (!matchingQuestObject) {
+    window.location ('../');
+}
+
 const h2 = document.createElement('h2');
 h2.textContent = matchingQuestObject.description;
 
