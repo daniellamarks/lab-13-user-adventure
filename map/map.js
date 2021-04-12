@@ -1,7 +1,6 @@
 import quests from '../data.js';
 import { renderHeader } from '../render-utils.js';
 import { getUserData, questsCompleted } from '../local-storage-utils.js';
-// import { getUserData, areAllQuestsCompleted } from '../local-storage-utils.js'
 
 const section = document.querySelector('section');
 
@@ -14,12 +13,12 @@ for (let quest of quests) {
     const div = document.createElement('div');
 
     anchorTag.textContent = quest.title;
-    console.log(quest.id)
+    console.log(quest.id);
     anchorTag.href = `../quest/?id=${quest.id}`;
 
     div.style.backgroundImage = `url(../assets/${quest.image})`;
 
-    div.classList.add(`${quest.id}`)
+    div.classList.add(`${quest.id}`);
     div.append(anchorTag);
     section.append(div);    
 
