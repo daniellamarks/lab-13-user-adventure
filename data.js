@@ -13,7 +13,7 @@ const desert = {
             You find an oasis!
         `,
         hp: 50,
-        gold: 35
+        grit: 35
     }, {
         id: 'lie',
         description: 'lie down and wait for rain',
@@ -21,15 +21,15 @@ const desert = {
            No rains come.  
         `,
         hp: -50,
-        gold: 50
+        grit: 50
     }, {
         id: 'drink',
         description: 'drink the cactus juice',
-        result: ` You are not yourself. But it doesn't kill you. 
+        result: ` You are no longer yourself. 
             
         `,
         hp: 10,
-        gold: 0
+        grit: 0
     }]
 };
 
@@ -51,16 +51,16 @@ const ocean = {
         result: `
            There is a net in the boat and you catch fish for months before another boat finds you. 
         `,
-        hp: 35,
-        gold: 15
+        hp: 15,
+        grit: 15
     }, {
         id: 'swim',
         description: 'Swim!',
         result: `
             You don't get far. 
         `,
-        hp: -45,
-        gold: 0
+        hp: -25,
+        grit: 0
     }, {
         id: 'motorboat',
         description: 'Take the motorboat',
@@ -68,7 +68,7 @@ const ocean = {
             You get pretty far but not far enough. 
         `,
         hp: 0,
-        gold: 90
+        grit: 90
     }]
 };
 
@@ -78,26 +78,26 @@ const mountain = {
     image: 'mountain.jpg',
 
     description: `
-        How will you climb get up the mountain?
+        How will you get up the mountain?
     `,
     choices: [{
         id: 'climb',
         description: 'Climb with gear',
         result: 'Good plan. You get to the top. ',
         hp: 100,
-        gold: 40
+        grit: 40
     }, {
         id: 'hike',
         description: 'Try to hike',
-        result: `It's too steep, you cannot hike straight up and take the long way`,
+        result: `It's too steep, you cannot hike straight up and end up taking the long way.`,
         hp: 10,
-        gold: 0
+        grit: 0
     }, {
         id: 'bike',
         description: 'Mountain bike?',
         result: 'Terrible idea. You fall off the mountain.',
         hp: -20,
-        gold: 0
+        grit: 0
     }]
 };
 

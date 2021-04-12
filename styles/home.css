@@ -48,7 +48,11 @@ button {
 }
 
 fieldset {
-    max-width: 30%;
-    min-width: 20%;
-    /* display: inline-block; */
+   width: 350px;
+      /* display: inline-block; */
+}
+
+#avatars {
+    display: flex;
+    justify-content: space-between;
 }

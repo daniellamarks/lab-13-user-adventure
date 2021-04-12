@@ -1,9 +1,12 @@
 import quests from '../data.js';
-import { getUserData, updateUserData } from '../local-storage-utils.js';
+import { updateUserData } from '../local-storage-utils.js';
 import { findById } from '../utils.js';
+import { renderHeader } from '../render-utils.js';
+
+renderHeader();
 
 const section = document.querySelector('section');
-
+const body = document.querySelector('body')
 const parameters = new URLSearchParams(window.location.search);
 
 const questId = parameters.get('id');
@@ -11,12 +14,9 @@ const questId = parameters.get('id');
 const matchingQuestObject = findById(quests, questId);
 
 const h2 = document.createElement('h2');
-const img = document.createElement('img');
+h2.textContent = matchingQuestObject.description;
 
-//put data from object into h2 and img
-
-h2.textContent = matchingQuestObject.title;
-img.src = `../assets/${matchingQuestObject.image}`;
+body.style.backgroundImage = `url(../assets/1${matchingQuestObject.image})`;
 
 const form = document.createElement('form');
 
@@ -27,6 +27,9 @@ for (let choice of matchingQuestObject.choices) {
     radio.type = 'radio';
     radio.name = 'possibleSelection';
     radio.value = choice.id;
+    // const img = document.createElement('img');
+    // img.src = '../assets/kayak1.jpg';
+    // img.width = '100%';
     label.append(choice.description, radio);
     
     form.append(label);
@@ -37,20 +40,32 @@ button.textContent = "I've made my choice";
 
 form.append(button);
 
-button.addEventListener('submit', (event) => {
+form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const formData = new FormData(form);
     const selectedOptionId = formData.get('possibleSelection');
 
     const matchingChoice = findById(matchingQuestObject.choices, selectedOptionId);
-
     updateUserData(matchingQuestObject.id, matchingChoice);
 
-    alert(JSON.stringify(getUserData()), true, 2);
+        // update UI
+    const sectionResult = document.createElement('section')
+    sectionResult.id = 'result'
+    sectionResult.classList.add('hidden')
+    const pResult = document.createElement('p')
+    pResult.id = 'result-description'
+    const aMap = document.createElement('a')
+    aMap.href = "../map"
+    aMap.textContent = 'Back to Quests'
 
-    window.location = '../map';
-
+    form.classList.add('hidden');
+    sectionResult.classList.remove('hidden');
+    pResult.textContent = matchingChoice.result;
+    
+    section.append(pResult, aMap)
+         
 });
 
-section.append(h2, img, form);
+section.append(h2, form);
+

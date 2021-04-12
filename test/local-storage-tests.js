@@ -6,7 +6,7 @@ test('should GET the user data from local storage', (expect) => {
 
     const user = {
         hp: 35,
-        gold: 0,
+        grit: 0,
         name: 'Daniella',
         class: 'elf',
         completed: {},
@@ -24,7 +24,7 @@ test('should SET the user data into local storage', (expect) => {
 
     const user = {
         hp: 35,
-        gold: 0,
+        grit: 0,
         name: 'Daniella',
         class: 'elf',
         completed: {},
@@ -38,11 +38,11 @@ test('should SET the user data into local storage', (expect) => {
 
 });
 
-test('when the user makes a choice, hp, gold, and completed should change', (expect) => {
+test('when the user makes a choice, hp, grit, and completed should change', (expect) => {
 
     const user = {
         hp: 35,
-        gold: 10,
+        grit: 10,
         name: 'Daniella',
         class: 'elf',
         completed: {},
@@ -52,12 +52,12 @@ test('when the user makes a choice, hp, gold, and completed should change', (exp
 
     const choice = {
         hp: 10,
-        gold: 25,
+        grit: 25,
     };
 
     const expected = {
         hp: 45,
-        gold: 35,
+        grit: 35,
         name: 'Daniella',
         class: 'elf',
         completed: {

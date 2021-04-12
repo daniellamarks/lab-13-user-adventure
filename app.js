@@ -7,14 +7,12 @@ form.addEventListener('submit', (event) => {
 
     const data = new FormData(form);
     const userName = data.get('name');
-    const userClass = data.get('class');
-    
-
+    const userChoice = data.get('moveAvatar');
     const user = {
         hp: 35,
-        gold: 0,
+        grit: 0,
         name: userName,
-        class: userClass,
+        image: `../assets/${userChoice}.png`, 
         completed: {}
     };
 
@@ -25,8 +23,3 @@ form.addEventListener('submit', (event) => {
 });
 
 
-// import functions and grab DOM elements
-
-// initialize state
-
-// set event listeners to update state and DOM

@@ -1,5 +1,7 @@
+import quests from '../data.js';
 const USER = 'USER';
 
+//returns an object
 export function getUserData() {
     const user = localStorage.getItem(USER);
     // const userObject = JSON.parse(user);
@@ -8,24 +10,35 @@ export function getUserData() {
 
     return JSON.parse(user);
 }
-//returns an object
 
+//puts into storage as string
 export function setUserData(user) {
     const stringyUser = JSON.stringify(user);
     
     localStorage.setItem(USER, stringyUser);
 }
-//puts into storage as string
 
+//put into storage as stringified object
 export function updateUserData(questId, choice){
 
     const user = getUserData();
 
     user.hp += choice.hp;
-    user.gold += choice.gold;
+    user.grit += choice.grit;
 
     user.completed[questId] = true;
 
     setUserData(user);
 }
-//put into storage as stringified objectg
+
+export function questsCompleted() {
+    const user = getUserData();
+
+    for (let quest of quests) {
+        if (!user.completed[quest.id]) {
+            return false;
+        }
+    }
+
+    return true;
+}
